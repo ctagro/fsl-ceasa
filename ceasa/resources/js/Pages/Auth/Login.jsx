@@ -36,9 +36,9 @@ export default function Login({ status, canResetPassword }) {
 
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
 
-            <form onSubmit={submit}>
+            <form className=" " onSubmit={submit}>
                 <div>
-                    <InputLabel htmlFor="email" value="Email" />
+                    <InputLabel htmlFor="email" className=' text-white ' value="Email" />
 
                     <TextInput
                         id="email"
@@ -55,7 +55,7 @@ export default function Login({ status, canResetPassword }) {
                 </div>
 
                 <div className="mt-4">
-                    <InputLabel htmlFor="password" value="Password" />
+                    <InputLabel htmlFor="password"  className=' text-white ' value="Password" />
 
                     <TextInput
                         id="password"
@@ -70,22 +70,23 @@ export default function Login({ status, canResetPassword }) {
                     <InputError message={errors.password} className="mt-2" />
                 </div>
 
-                <div className="block mt-4">
+                <div className="flex flex-row justify-between mt-4">
                     <label className="flex items-center">
                         <Checkbox name="remember" value={data.remember} onChange={handleOnChange} />
-                        <span className="ml-2 text-sm text-gray-600">Remember me</span>
+                        <span className="ml-2 text-sm text-white">Remember me</span>
                     </label>
-                </div>
-
-                <div className="flex items-center justify-end mt-4">
                     {canResetPassword && (
                         <Link
                             href={route('password.request')}
-                            className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            className="underline text-sm text-white hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
                             Forgot your password?
                         </Link>
                     )}
+                </div>
+
+                <div className="flex flex-col items-center justify-end mt-4">
+                    
 
                     <PrimaryButton className="ml-4" disabled={processing}>
                         Log in

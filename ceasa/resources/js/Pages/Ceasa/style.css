@@ -1,0 +1,29 @@
+
+body {
+    background-color: #8CC7D7;
+}
+
+.feild{
+    padding: 8px;
+    border-radius: 0.5rem;
+}
+
+
+ th{
+    padding: 8px;
+ }
+
+ td {
+    background-color: white;
+    padding: 8px;
+
+
+ }
+
+.tdp {
+    border-top-left-radius: 0.5rem;
+}
+.tdl {
+    border-top-right-radius: 0.5rem;
+}
+
