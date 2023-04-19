@@ -70,7 +70,7 @@ export default function Welcome(props) {
                     <div>
                         <div className="flex flex-col items-center mt-40 lg:max-w-[1240px] lg:mt-60 align-middle text-white mx-auto">
                             <h1 className="lg:text-4xl text-2xl">
-                                Fazenda Santa Luiza
+                                Fazenda Santa Luizaaaa
                             </h1>
                             <p className="w-1/2 text-center my-6">
                                 Moth beans should be first soaked overnight
