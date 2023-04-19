@@ -1,14 +1,16 @@
-import React from "react";
-import { HiOutlineChevronDown } from "react-icons/hi";
-import { AiOutlineSearch } from "react-icons/ai";
-import { BiFilter } from "react-icons/bi";
-import Navbar from "../../components/Navbar";
-import "./style.css";
 
-function Table() {
+import "./style.css";
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
+
+export default function Show(props) {
+
+ 
   return (
+
+  
     <div>
-      <Navbar></Navbar>
+   
       <div className=" flex flex-col lg:flex-col justify-center items-center lg:px-4 m-auto max-w-[343px] lg:max-w-[1240px] md:max-w-[820px] ">
         <div className="text-white w-full md:ml-2 flex flex-col ml-4 ">
           <h1 className="lg:text-2xl text-xl font-semibold  ">
@@ -68,41 +70,43 @@ function Table() {
             </div>
           </div>
         </div>
-        <table className="  text-gray-700 lg:w-full md:w-full m-2 text-center lg:text-sm md:text-sm text-[0.5rem]">
-          <thead>
-            <tr className=" bg-white ">
-              <th className=" rounded-l-lg ">  
-              </th>
-              <th className="">Produto</th>
-              <th>Packing</th>
-              <th>Data</th>
-              <th>Prico Min</th>
-              <th>Prico Mid</th>
-              <th>Prico Max</th>
-              <th className=" rounded-r-lg ">Situacao</th>
-            </tr>
-            <span className="p-1 w-full"></span>
-          </thead>
-          <tbody>
-            <tr className="">
-              <td className=" tdp  ">
-                {" "}
-                <HiOutlineChevronDown></HiOutlineChevronDown>{" "}
-              </td>
-              <td className="">Alfreds Futterkiste</td>
-              <td>Maria Anders</td>
-              <td>Germany</td>
-              <td>Alfreds Futterkiste</td>
-              <td>Maria Anders</td>
-              <td>Germany</td>
-              <td className="tdl">Alfreds Futterkiste</td>
-            </tr>
-          
-          </tbody>
-        </table>
+        <table className='table table-striped'>
+                    <thead className= 'bg-primary text-white'>
+                        <tr>
+                            <th>Data</th>
+                            <th>Produto</th>
+                            <th>Embalagem</th>
+                            <th>Price_min</th>
+                            <th>Price_com</th>
+                            <th>price_max</th>
+                            <th>Situation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        { price_ceasa_bhs.map( (price_ceasa_bh) => (
+                             <tr Key={price_ceasa_bh.id}>
+                                <td> {price_ceasa_bh.date} </td>
+                                <td> {price_ceasa_bh.product} </td>
+                                <td> {price_ceasa_bh.embalagem} </td>
+                                <td> {price_ceasa_bh.price_min} </td>
+                                <td> {price_ceasa_bh.price_com} </td>
+                                <td> {price_ceasa_bh.price_max} </td>
+                                <td> {price_ceasa_bh.situation} </td>
+                                <td>
+                                <Link to={`/edit/${price_ceasa_bh.id}`} className='btn btn-warning'>Edit</Link>
+                                <button onClick={ ()=>deletePrice_ceasa_bh(price_ceasa_bh.id)} className='btn btn-danger'>Delete</button>
+                                </td>
+                     
+                            </tr>
+                         )) }
+                    </tbody>
+               
+
+            </table>
       </div>
+    
     </div>
   );
 }
 
-export default Table;
+

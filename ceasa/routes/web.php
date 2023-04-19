@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Import\Price_ceasaController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -22,7 +23,7 @@ Route::get('/', function () {
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
-    ]);
+    ]); 
 });
 
 Route::get('/dashboard', function () {
@@ -34,5 +35,13 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
+   // Route::get('ceasa', [Price_ceasaController::class, 'index'])->name('ceasa');
+    Route::get('ceasa', [Price_ceasaController::class, 'show'])
+                ->name('ceasa.show');
+
+
+
 
 require __DIR__.'/auth.php';
