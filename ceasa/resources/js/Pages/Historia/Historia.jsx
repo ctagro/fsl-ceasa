@@ -1,17 +1,16 @@
 import React from "react";
-import Navbar from "../../components/Navbar";
+import { Head } from "@inertiajs/react";
+import LandingPageLayout from "@/Layouts/LandingPageLayout";
 
 function Historia() {
-    return(
-        <div >
-            <Navbar/>
+    return (
+        <LandingPageLayout>
+            <Head title="Historia" />
             <div>
-                <p>historia</p>
+                <p>historiaijuhypuhuu8ui</p>
             </div>
-
-        </div>
-    )
+        </LandingPageLayout>
+    );
 }
-
 
 export default Historia;

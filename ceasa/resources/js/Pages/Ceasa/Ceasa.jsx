@@ -1,14 +1,16 @@
+import { Head } from "@inertiajs/react";
 import React from "react";
 import { HiOutlineChevronDown } from "react-icons/hi";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BiFilter } from "react-icons/bi";
-import Navbar from "../../components/Navbar";
 import "./style.css";
+import LandingPageLayout from "@/Layouts/LandingPageLayout";
 
 function Table() {
   return (
+
+   <LandingPageLayout>
     <div>
-      <Navbar></Navbar>
       <div className=" flex flex-col lg:flex-col justify-center items-center lg:px-4 m-auto max-w-[343px] lg:max-w-[1240px] md:max-w-[820px] ">
         <div className="text-white w-full md:ml-2 flex flex-col ml-4 ">
           <h1 className="lg:text-2xl text-xl font-semibold  ">
@@ -28,8 +30,7 @@ function Table() {
                   className=" feild "
                   type="date"
                   name="DataInicial"
-                  id="DataInicial"
-                />
+                  id="DataInicial" />
               </div>
               <div className="dataFinal ">
                 <p className="text-white">Data Final</p>
@@ -37,8 +38,7 @@ function Table() {
                   className=" feild "
                   type="date"
                   name="DataFinal"
-                  id="DataFinal"
-                />
+                  id="DataFinal" />
               </div>
             </div>
             <div className="lg:m-auto md:my-auto">
@@ -48,8 +48,7 @@ function Table() {
                   className=" feild text-gray-800 w-full "
                   type="text"
                   name="Produto"
-                  id="Product"
-                />
+                  id="Product" />
               </div>
             </div>
           </div>
@@ -59,19 +58,18 @@ function Table() {
               <button type="/">Filtro</button>
             </div>
             <div className=" feild bg-white pesquisar justify-start m-auto md:w-full flex lg:flex-row space-x-2">
-              <AiOutlineSearch size={20} />
+              <AiOutlineSearch className="m-auto" size={20} />
               <input
                 type="text"
-                className=" Pesquisar"
-                placeholder="Pesquisar"
-              />
+                className=" Pesquisar p-0 "
+                placeholder="Pesquisar" />
             </div>
           </div>
         </div>
         <table className="  text-gray-700 lg:w-full md:w-full m-2 text-center lg:text-sm md:text-sm text-[0.5rem]">
           <thead>
             <tr className=" bg-white ">
-              <th className=" rounded-l-lg ">  
+              <th className=" rounded-l-lg ">
               </th>
               <th className="">Produto</th>
               <th>Packing</th>
@@ -97,11 +95,12 @@ function Table() {
               <td>Germany</td>
               <td className="tdl">Alfreds Futterkiste</td>
             </tr>
-          
+
           </tbody>
         </table>
       </div>
     </div>
+    </LandingPageLayout> 
   );
 }
 

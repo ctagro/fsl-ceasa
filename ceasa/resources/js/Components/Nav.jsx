@@ -1,7 +1,7 @@
 import { Link, Head } from "@inertiajs/react";
 import { BiUserCircle } from "react-icons/bi";
 import Logo from "../../assets/logo.png";
-import "./welcome.css";
+import "../../js/Pages/Welcome.css";
 //import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
 export default function Welcome(props) {
@@ -61,36 +61,8 @@ export default function Welcome(props) {
                                 </>
                             )}
                         </div>
-                    </div>
-                    
-
-
-
-                    
-                    <div>
-                        <div className="flex flex-col items-center mt-40 lg:max-w-[1240px] lg:mt-60 align-middle text-white mx-auto">
-                            <h1 className="lg:text-4xl text-2xl">
-                                Fazenda Santa Luiza
-                            </h1>
-                            <p className="w-1/2 text-center my-6">
-                                Moth beans should be first soaked overnight
-                                before boiled in order to remove some of the
-                                antinutritional factors that may interfere with
-                                digestion. One serving of moth bean
-                            </p>
-                            <Link
-                                href={route("register")}
-                                className="uppercase rounded-full lg:p-4 p-2 bg-[#8CC7D7]"
-                            >
-                                Cadastre Grátis
-                            </Link>
-                        </div>
-                    </div>
+                    </div>       
                 </div>
-
-                <style>{`
-               
-            `}</style>
             </div>
         </>
     );
