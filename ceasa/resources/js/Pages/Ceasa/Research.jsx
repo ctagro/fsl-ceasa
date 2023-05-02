@@ -1,39 +1,16 @@
 import { Head } from "@inertiajs/react";
 import React from "react";
-import { useState } from 'react'
 import { HiOutlineChevronDown } from "react-icons/hi";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BiFilter } from "react-icons/bi";
-import { router } from '@inertiajs/react'
 import "./style.css";
 import LandingPageLayout from "@/Layouts/LandingPageLayout";
 
-export default function Consult() {
-  const [values, setValues] = useState({
-    date_inicial: "",
-    date_final: "",
-    product: "",
-  })
-
-  function handleChange(e) {
-    const key = e.target.id;
-    const value = e.target.value
-    setValues(values => ({
-        ...values,
-        [key]: value,
-    }))
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault()
-    console.log(values);
-    router.post('ceasa', values)
-  }
-
+const Ceasa = ({priceCeasa}) =>
+ {
   return (
 
    <LandingPageLayout>
-  <form onSubmit={handleSubmit}>
     <div>
       <div className=" flex flex-col lg:flex-col justify-center items-center lg:px-4 m-auto max-w-[343px] lg:max-w-[1240px] md:max-w-[820px] ">
         <div className="text-white w-full md:ml-2 flex flex-col ml-4 ">
@@ -45,31 +22,24 @@ export default function Consult() {
           </p>
           <span className="bg-white w-1/3 p-[1px] my-1"></span>
         </div>
-    
         <div className="header justify-between  flex flex-col md:flex-col lg:flex-row lg:w-full ">
           <div className="date flex flex-col md:flex-row lg:flex-row md:space-x-5  lg:space-x-5">
             <div className="flex flex-row my-4 justify-between md:space-x-5 lg:space-x-5 ">
-          
               <div className="dataInicial ">
                 <p className="text-white">Data Inicial</p>
                 <input
                   className=" feild "
                   type="date"
-                  name="date_inicial"
-                  id="date_inicial" 
-                  value={values.date_inicial}
-                  onChange={handleChange}
-                  />
+                  name="DataInicial"
+                  id="DataInicial" />
               </div>
               <div className="dataFinal ">
                 <p className="text-white">Data Final</p>
                 <input
                   className=" feild "
                   type="date"
-                  name="date_final"
-                  id="date_final"
-                  value={values.date_final}
-                  onChange={handleChange} />
+                  name="DataFinal"
+                  id="DataFinal" />
               </div>
             </div>
             <div className="lg:m-auto md:my-auto">
@@ -78,17 +48,15 @@ export default function Consult() {
                 <input
                   className=" feild text-gray-800 w-full "
                   type="text"
-                  name="product"
-                  id="product"
-                  value={values.product}
-                  onChange={handleChange} />
+                  name="Produto"
+                  id="Product" />
               </div>
             </div>
           </div>
           <div className="search flex lg:flex-row space-x-5 lg:-mb-[10px] md:flex-row my-4">
             <div className="feild bg-white Filter justify-start m-auto flex lg:flex-row space-x-2">
               <BiFilter size={20} />
-              <button type="submit">Filtro</button>
+              <button type="/">Filtro</button>
             </div>
             <div className=" feild bg-white pesquisar justify-start m-auto md:w-full flex lg:flex-row space-x-2">
               <AiOutlineSearch className="m-auto" size={20} />
@@ -96,15 +64,48 @@ export default function Consult() {
                 type="text"
                 className=" Pesquisar p-0 "
                 placeholder="Pesquisar" />
-            </div>        
-          </div>         
-        </div>   
+            </div>
+          </div>
+        </div>
+        <table className="  text-gray-700 lg:w-full md:w-full m-2 text-center lg:text-sm md:text-sm text-[0.5rem]">
+          <thead>
+            <tr className=" bg-white ">
+              <th className=" rounded-l-lg ">
+              </th>
+              <th className="">Data</th>
+              <th>Produto</th>
+              <th>Embalagem</th>
+              <th>Preço Mínimo</th>
+              <th>Preço Médio</th>
+              <th>Preço Máximo</th>
+              <th className=" rounded-r-lg " >Situacao</th>
+            </tr>
+            <span className="p-1 w-full"></span>
+          </thead>
+          <tbody>
+          <tr className="">
+              <td className=" tdp  ">
+                {" "}
+                <HiOutlineChevronDown></HiOutlineChevronDown>{" "}
+              </td>
+              { priceCeasa.map( (priceCeasa) => (
+                             <td Key={priceCeasa.id}>
+                                <td className=""> {priceCeasa.date} </td>
+                                <td> {priceCeasa.product} </td>
+                                <td> {priceCeasa.embalagem} </td>
+                                <td> {priceCeasa.price_min} </td>
+                                <td> {priceCeasa.price_com} </td>
+                                <td> {priceCeasa.price_max} </td>
+                                <td className="tdl"> {priceCeasa.situation} </td>
+                             </td>
+            ))} 
+              </tr>          
+          </tbody>
+        </table>
       </div>
     </div>
-</form>
-   
     </LandingPageLayout> 
   );
 }
 
-
+export default Ceasa;
