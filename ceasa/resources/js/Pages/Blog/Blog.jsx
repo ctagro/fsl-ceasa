@@ -18,13 +18,13 @@ function Blog() {
         <LandingPage>
 
             <div className="Blog flex flex-col lg:flex-col justify-center items-center lg:px-4 m-auto max-w-[343px] lg:max-w-[1240px] md:max-w-[820px] ">
-                <div className="lg:w-screen lg:h-screen flex lg:text-center lg:justify-center">
+                <div className="  lg:w-screen lg:h-screen flex lg:text-center lg:justify-center animate-[fadeInUp_0.3s_ease-in]">
                     <h1 className=" header absloute lg:text-5xl align-middle text-white font-bold lg:p-52 lg:mt-[200px] uppercase md:text-2xl md:pt-[200px] mt-[100px] text-[15px]">
                         bem-vindo ao blog da
                         <br /> Fazenda Santa Luzia
                     </h1>
                 </div>
-                <div className="content-r flex lg:flex-row bg-white lg:w-[90%] lg:mt-[200px] md:w-[80%] md:m-[200px] md:justify-center md:flex-row md:mt-[100px] flex-col justify-center items-center mt-[50px] ">
+                <div className="content-r flex lg:flex-row bg-white lg:w-[90%] lg:mt-[200px] md:w-[80%] md:m-[200px] md:justify-center md:flex-row md:mt-[100px] flex-col justify-center items-center mt-[50px]  ">
                     <img
                         src={image2}
                         alt="Micro-Irrigacao"
@@ -63,7 +63,7 @@ function Blog() {
                     </div>
                 </div>
 
-                <div className="content-l flex md:flex-row lg:flex-row bg-white lg:w-[90%] w-[100%] md:w-[80%] md:justify-center md:mt-[-150px] flex-col justify-center items-center mt-[20px]">
+                <div className="content-l flex md:flex-row lg:flex-row bg-white lg:w-[90%] w-[100%] md:w-[80%] md:justify-center md:mt-[-150px] flex-col justify-center items-center mt-[20px] ">
                     <div className="content-info flex lg:flex-col lg:w-[50%] lg:text-right md:text-right lg:pl-[70px] lg:pr-[80px] lg:ml-[140px] md:w-[70%] flex-col md:pl-[10px] md:ml-[50px] md:pr-[25px]">
                         <h1 className="content-heading text-[10px] uppercase lg:text-4xl italic text-[#63ABED] lg:text-right text-center md:text-right">
                             Auto
@@ -111,7 +111,7 @@ function Blog() {
                             A auto-fertilização <br />é o processo
                         </p>
                     </div>
-                    <div className="icon">
+                    <div className="icon ">
                         <img
                             src={line}
                             className="line lg:w-[18px] absolute lg:translate-y-[-30px] lg:translate-x-2 w-[10px] translate-y-[-30px] translate-x-[3px] md:translate-y-[-23px]"

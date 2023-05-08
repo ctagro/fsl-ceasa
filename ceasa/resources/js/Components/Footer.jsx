@@ -10,10 +10,10 @@ import icon3 from '../../assets/icon3.svg';
           © Fazenda Santa Luiza 2023
         </p>
         <div className="flex flex-row lg:ml-[50%] items-center mt-2 justify-center  space-x-4">
-          <img src={icon} className="w-[24px] " />
-          <img src={icon3} className="w-[24px] " />
-          <img src={icon2} className="w-[24px] " />
-          <img src={icon1} className="w-[24px] " />
+          <img src={icon} className="w-[24px] transition ease-in-out delay-50 hover:scale-110 duration-200" />
+          <img src={icon3} className="w-[24px] transition ease-in-out delay-50 hover:scale-110 duration-200" />
+          <img src={icon2} className="w-[24px] transition ease-in-out delay-50 hover:scale-110 duration-200" />
+          <img src={icon1} className="w-[24px] transition ease-in-out delay-50 hover:scale-110 duration-200" />
         </div>
       </div>
     )

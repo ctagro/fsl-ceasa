@@ -38,15 +38,15 @@ export default function Consult() {
    <LandingPage>
   <form onSubmit={handleSubmit}>
     <div>
-      <div className=" flex flex-col lg:flex-col justify-center items-center lg:px-4 m-auto max-w-[343px] lg:max-w-[1240px] md:max-w-[820px] ">
-        <div className="text-white w-full md:ml-2 flex flex-col ml-4 ">
+      <div className=" flex flex-col lg:flex-col items-center lg:px-4 m-auto max-w-[343px] h-screen lg:max-w-[1240px] md:max-w-[820px] ">
+        <div className="text-white w-full md:ml-2 flex flex-col ml-4 mt-4 ">
           <h1 className="lg:text-2xl text-xl font-semibold  ">
             Cotações do Ceasa
           </h1>
           <p className=" text-xs ">
             pesquisar preço dos produtos por período específico
           </p>
-          <span className="bg-white w-1/3 p-[1px] my-1"></span>
+          <span className="bg-white w-full p-[1px] my-1"></span>
         </div>
     
         <div className="header justify-between  flex flex-col md:flex-col lg:flex-row lg:w-full ">
@@ -79,9 +79,9 @@ export default function Consult() {
             </div>
           </div>
           <div className="search flex lg:flex-row space-x-5 lg:-mb-[10px] md:flex-row my-4">
-            <div className="feild bg-white Filter justify-start m-auto flex lg:flex-row space-x-2">
-              <BiFilter size={20} />
-              <button type="submit">Filtro</button>
+            <div className="feild bg-[#4d982c] Filter justify-start m-auto flex lg:flex-row text-white space-x-2">
+             {/*  <BiFilter size={20} /> */}
+              <button type="submit">Pesquisar</button>
             </div>
             <div className=" feild bg-white pesquisar justify-start m-auto md:w-full flex lg:flex-row space-x-2">
               <AiOutlineSearch className="m-auto" size={20} />

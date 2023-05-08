@@ -21,6 +21,8 @@
     },
     "dependencies": {
         "@types/node": "^18.15.11",
-        "react-icons": "^4.8.0"
+        "react-icons": "^4.8.0",
+        "react-paginate": "^8.2.0",
+        "recharts": "^2.5.0"
     }
 }

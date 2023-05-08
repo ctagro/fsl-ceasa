@@ -4,9 +4,9 @@ import Footer from "@/Components/Footer";
 
 export default function LandingPage({ children }) {
     return (
-        <main className=" ">
+        <main className=" bg-gradient-to-r from-violet-500 to-fuchsia-500">
           
-                <Nav></Nav>
+                <Nav className=''></Nav>
            
 
             <article className="  ">{children}</article>
