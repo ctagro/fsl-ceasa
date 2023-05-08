@@ -1,25 +1,21 @@
 import React from "react";
 import "./style.css";
-import image2 from "..//../assets/image 2.jpg";
-import image3 from "..//../assets/image 3.png";
-import image1 from "..//../assets/image 1.png";
-import Vector1 from "..//..//assets/Vector 1.svg";
-import Vector2 from "..//..//assets/Vector 2.svg";
-import Vector3 from "..//..//assets/Vector 3.svg";
-import Vector5 from "..//..//assets/Vector 5.svg";
-import Vector4 from "..//..//assets/Vector 4.svg";
-import line from "..//..//assets/line.svg";
-import Vector0 from "..//..//assets/Vector 0.svg";
-import icon from "..//..//assets/icon.svg";
-import icon1 from "..//..//assets/icon1.svg";
-import icon2 from "..//..//assets/icon2.svg";
-import icon3 from "..//..//assets/icon3.svg";
-import LandingPageLayout from "@/Layouts/LandingPageLayout";
+import image2 from "../../../assets/image 2.jpg";
+import image3 from "../../../assets/image 3.png";
+import image1 from "../../../assets/image 1.png";
+import Vector1 from "../../../assets/Vector 1.svg";
+import Vector2 from "../../../assets/Vector 2.svg";
+import Vector3 from "../../../assets/Vector 3.svg";
+import Vector5 from "../../../assets/Vector 5.svg";
+import Vector4 from "../../../assets/Vector 4.svg";
+import line from "../../../assets/line.svg";
+import Vector0 from "../../../assets/Vector 0.svg";
+
+import LandingPage from "@/Layouts/LandingPage";
 
 function Blog() {
     return (
-        <LandingPageLayout>
-            <Head title="Blog" />
+        <LandingPage>
 
             <div className="Blog flex flex-col lg:flex-col justify-center items-center lg:px-4 m-auto max-w-[343px] lg:max-w-[1240px] md:max-w-[820px] ">
                 <div className="lg:w-screen lg:h-screen flex lg:text-center lg:justify-center">
@@ -201,18 +197,7 @@ function Blog() {
                 </div>
             </div>
 
-            <div className="bg-[#FAF3E3] h-[60px] w-[100vw] flex flex-row items-center justify-center">
-                <p className="lg:text-[14px] md:text-[10px] text-[9px]">
-                    © Fazenda Santa Luiza 2023
-                </p>
-                <div className="flex flex-row lg:ml-[50%] ml-[30px] space-x-2">
-                    <img src={icon} className="w-[12px]" />
-                    <img src={icon3} className="w-[12px]" />
-                    <img src={icon2} className="w-[12px]" />
-                    <img src={icon1} className="w-[12px]" />
-                </div>
-            </div>
-        </LandingPageLayout>
+        </LandingPage>
     );
 }
 

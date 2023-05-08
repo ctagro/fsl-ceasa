@@ -7,6 +7,9 @@ import { BiFilter } from "react-icons/bi";
 import { router } from '@inertiajs/react'
 import "./style.css";
 import LandingPageLayout from "@/Layouts/LandingPageLayout";
+import Welcome from "@/Components/Nav";
+import GuestLayout from "../../Layouts/GuestLayout";
+import LandingPage from "@/Layouts/LandingPage";
 
 export default function Consult() {
   const [values, setValues] = useState({
@@ -32,7 +35,7 @@ export default function Consult() {
 
   return (
 
-   <LandingPageLayout>
+   <LandingPage>
   <form onSubmit={handleSubmit}>
     <div>
       <div className=" flex flex-col lg:flex-col justify-center items-center lg:px-4 m-auto max-w-[343px] lg:max-w-[1240px] md:max-w-[820px] ">
@@ -73,16 +76,6 @@ export default function Consult() {
               </div>
             </div>
             <div className="lg:m-auto md:my-auto">
-              <div className="ProductInput text-white">
-                <p>Produto</p>
-                <input
-                  className=" feild text-gray-800 w-full "
-                  type="text"
-                  name="product"
-                  id="product"
-                  value={values.product}
-                  onChange={handleChange} />
-              </div>
             </div>
           </div>
           <div className="search flex lg:flex-row space-x-5 lg:-mb-[10px] md:flex-row my-4">
@@ -94,6 +87,10 @@ export default function Consult() {
               <AiOutlineSearch className="m-auto" size={20} />
               <input
                 type="text"
+                  name="product"
+                  id="product"
+                  value={values.product}
+                  onChange={handleChange}
                 className=" Pesquisar p-0 "
                 placeholder="Pesquisar" />
             </div>        
@@ -103,7 +100,7 @@ export default function Consult() {
     </div>
 </form>
    
-    </LandingPageLayout> 
+    </LandingPage> 
   );
 }
 
