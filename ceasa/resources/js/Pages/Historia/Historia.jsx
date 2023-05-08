@@ -7,7 +7,7 @@ function Historia() {
         <LandingPageLayout>
             <Head title="Historia" />
             <div>
-                <p>historiaijuhypuhuu8ui</p>
+                <p>História da Fazenda Santa Luiza</p>
             </div>
         </LandingPageLayout>
     );

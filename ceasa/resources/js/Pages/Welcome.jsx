@@ -2,6 +2,7 @@ import { Link, Head } from "@inertiajs/react";
 import { BiUserCircle } from "react-icons/bi";
 import Logo from "../../assets/logo.png";
 import "./welcome.css";
+import { router } from '@inertiajs/react'
 //import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
 export default function Welcome(props) {
@@ -32,7 +33,7 @@ export default function Welcome(props) {
                                     </div>
                                     <div className="flex flex-row my-auto space-x-4">
                                         <Link
-                                        
+                                        href="historia" method="get"
                                         className="font-semibold text-black hover:text-gray-900 dark:text-black dark:hover:text-gray-400 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
                                             Historia
                                         </Link>
@@ -42,11 +43,16 @@ export default function Welcome(props) {
                                         <Link className="font-semibold text-black hover:text-gray-900 dark:text-black dark:hover:text-gray-400 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
                                             Produtos
                                         </Link>
-                                        <Link className="font-semibold text-black hover:text-gray-900 dark:text-black dark:hover:text-gray-400 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
+                                        <Link 
+                                           href="ceasa" method="get"
+                                          // href="ceasa" method="post" data={{ product: 'Pimentao Verde' }}
+                                           
+                                            className="font-semibold text-black hover:text-gray-900 dark:text-black dark:hover:text-gray-400 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+                                        >
                                             Ceasa
                                         </Link>
                                         <Link
-                                        
+                                            href="blog" method="get"
                                          className="font-semibold text-black hover:text-gray-900 dark:text-black dark:hover:text-gray-400 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
                                             Blog
                                         </Link>
@@ -70,7 +76,7 @@ export default function Welcome(props) {
                     <div>
                         <div className="flex flex-col items-center mt-40 lg:max-w-[1240px] lg:mt-60 align-middle text-white mx-auto">
                             <h1 className="lg:text-4xl text-2xl">
-                                Fazenda Santa Luiza
+                                Fazenda Santa Luizaaaa
                             </h1>
                             <p className="w-1/2 text-center my-6">
                                 Moth beans should be first soaked overnight
