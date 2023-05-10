@@ -46,7 +46,7 @@ function Historia() {
                             já que a água é aplicada diretamente na região das raízes,
                             reduzindo a erosão e o escoamento superficial.</p>
                     </div>
-                    <img src={Vector56} className="line-2 lg:w-[500px] absolute -z-50 lg:mt-[700px] lg:ml-[530px] rotate-[20deg] md:w-[300px] md:mt-[500px] md:ml-[350px] w-[200px] mt-[200px] ml-[260px]" />
+                    <img src={Vector56} className="line-2 lg:w-[500px] absolute z-50 lg:mt-[700px] lg:ml-[530px] rotate-[20deg] md:w-[300px] md:mt-[500px] md:ml-[350px] w-[200px] mt-[200px] ml-[260px]" />
                 </div>
 
                 {/*image3*/}
@@ -63,7 +63,7 @@ function Historia() {
                             na região das raízes, reduzindo a erosão e o escoamento superficial.
                         </p>
                     </div>
-                    <img src={Vector57} className="line-3 lg:mr-[900px] lg:mt-[-400px] -z-50 lg:w-[500px] md:w-[300px] md:mt-[-200px] md:mr-[600px] md:ml-[0px] w-[200px] ml-[-160px] mt-[-130px]" />
+                    <img src={Vector57} className="line-3 lg:mr-[900px] lg:mt-[-400px] z-50 lg:w-[500px] md:w-[300px] md:mt-[-200px] md:mr-[600px] md:ml-[0px] w-[200px] ml-[-160px] mt-[-130px]" />
                 </div>
 
                 {/*image4*/}
