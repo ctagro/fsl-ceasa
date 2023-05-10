@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use Inertia\Response;
+use Illuminate\Support\Arr;
 
 class Price_ceasaController extends Controller
 {
@@ -44,7 +45,7 @@ class Price_ceasaController extends Controller
    
          $query = substr($prepareQuery, 0 , -5);
 
-     //   dd($query);
+      // dd($query);
 
         if ($query == False){
             $cotacoes = Price_ceasa_bh::get();
@@ -59,5 +60,22 @@ class Price_ceasaController extends Controller
        return Inertia::render('Ceasa/Research',[
             'priceCeasa' =>  $cotacoes
                 ]);
+    }
+
+    public function barChart()
+
+    {
+       $query = 'product LIKE "%pimentao amarelo%"';
+
+       $cotacoes = Price_ceasa_bh::whereRaw($query)->orderBy('date')->get();
+       $cotacoes_json =  $cotacoes->toJson();
+
+        //   dd($cotacoes,$cotacoes_json);
+       
+      
+           return Inertia::render('reports/WeeklyReport',[
+            'priceCeasa' =>  $cotacoes
+                ]);   
+
     }
 }

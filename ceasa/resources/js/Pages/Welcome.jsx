@@ -45,7 +45,6 @@ function Welcome(props, { children }) {
                                         <Link
                                             href="ceasa"
                                             method="get"
-                                            // href="ceasa" method="post" data={{ product: 'Pimentao Verde' }}
 
                                             className="font-semibold text-black hover:text-gray-900 dark:text-black dark:hover:text-gray-400 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
                                         >
