@@ -67,15 +67,14 @@ class Price_ceasaController extends Controller
     {
        $query = 'product LIKE "%pimentao amarelo%"';
 
-       $cotacoes = Price_ceasa_bh::whereRaw($query)->orderBy('date')->get();
-       $cotacoes_json =  $cotacoes->toJson();
+       $products = Price_ceasa_bh::whereRaw($query)->orderBy('date')->get();
+      // $cotacoes_json =  $cotacoes->toJson();
 
         //   dd($cotacoes,$cotacoes_json);
        
       
-           return Inertia::render('reports/WeeklyReport',[
-            'priceCeasa' =>  $cotacoes
-                ]);   
+           return  $products;
+            
 
     }
 }

@@ -10,6 +10,7 @@ import LandingPageLayout from "@/Layouts/LandingPageLayout";
 import Welcome from "@/Components/Nav";
 import GuestLayout from "../../Layouts/GuestLayout";
 import LandingPage from "@/Layouts/LandingPage";
+import ShowProducts from "../reports/WeeklyReport1";
 
 export default function Consult() {
   const [values, setValues] = useState({
@@ -94,7 +95,8 @@ export default function Consult() {
                 className=" Pesquisar p-0 "
                 placeholder="Pesquisar" />
             </div>        
-          </div>         
+          </div>     
+            
         </div>   
       </div>
     </div>

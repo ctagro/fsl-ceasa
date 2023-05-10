@@ -1,7 +1,8 @@
 
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Head } from "@inertiajs/react";
-import WeeklyReport from "./reports/WeeklyReport";
+import WeeklyReport1 from "./reports/WeeklyReport1";
+import ShowProducts from "./reports/WeeklyReport1";
 
 
 
@@ -22,7 +23,7 @@ export default function Dashboard(props) {
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
 
-                        <WeeklyReport />
+                    
 
                     </div>
                 </div>

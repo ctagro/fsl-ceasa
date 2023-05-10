@@ -37,6 +37,10 @@ export default function Authenticated({ auth, header, children }) {
                                     Ceasa
                                 </NavLink>
                             </div>
+                            <Link to="/report">
+                          report
+
+                            </Link>
                         </div>
 
                         <div className="hidden sm:flex sm:items-center sm:ml-6">
