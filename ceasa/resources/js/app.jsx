@@ -5,7 +5,10 @@ import { createRoot } from 'react-dom/client';
 import { createInertiaApp } from '@inertiajs/react';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 
-const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Fazenda Sta Luiza';
+
+import WeeklyReport from './Pages/reports/WeeklyReport';
+
+const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Fazenda Sta';
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,

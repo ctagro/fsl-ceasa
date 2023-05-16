@@ -16,8 +16,12 @@ use Illuminate\Support\Arr;
 class Price_ceasaController extends Controller
 {
     
+    
     public function consult(): Response
     {
+        //dd("aqui");
+
+        
         return Inertia::render('Ceasa/Ceasa',[
             ]);
     }
@@ -26,6 +30,8 @@ class Price_ceasaController extends Controller
     {
 
        $pesquisa = $request;
+
+       //dd($pesquisa);
 
         $termos = $request->only('product', 'date_inicial', 'date_final' );
         $prepareQuery = "";
@@ -50,19 +56,21 @@ class Price_ceasaController extends Controller
         if ($query == False){
             $cotacoes = Price_ceasa_bh::get();
       
-           return Inertia::render('Ceasa/Research',[
-            'priceCeasa' =>  $cotacoes
-                ]);   
+            return Inertia::render('reports/TableReport', [
+                'priceCeasa' =>  $cotacoes,
+    
+            ]);
         }
 
-        $cotacoes = Price_ceasa_bh::whereRaw($query)->orderBy('date')->get();
-        
-       return Inertia::render('Ceasa/Research',[
-            'priceCeasa' =>  $cotacoes
-                ]);
+            $cotacoes = Price_ceasa_bh::whereRaw($query)->orderBy('date')->get();
+            
+            return Inertia::render('reports/TableReport', [
+                'priceCeasa' =>  $cotacoes,
+    
+            ]);
     }
 
-    public function barChart()
+    public function lineChart()
 
     {
        $query = 'product LIKE "%pimentao amarelo%"';
@@ -71,11 +79,38 @@ class Price_ceasaController extends Controller
        $cotacoes_json =  $cotacoes->toJson();
 
         //   dd($cotacoes,$cotacoes_json);
-       
-      
-           return Inertia::render('reports/WeeklyReport',[
-            'priceCeasa' =>  $cotacoes
-                ]);   
+        $user = auth()->user()->name;
 
+       // dd($user);
+      
+           return Inertia::render('reports/LineReport',[
+            'priceCeasa' =>  $cotacoes,
+                ]); 
+        
+
+    }
+
+    public function barChart()
+
+    {
+       $query = 'product LIKE "%pimentao amarelo%"';
+
+       $cotacoes = Price_ceasa_bh::whereRaw($query)->orderBy('date')->get();
+      
+        return Inertia::render('reports/BarReport',[
+            'priceCeasa' =>  $cotacoes
+                ]); 
+
+    }
+
+    public function tableReport(): Response
+    {
+        $cotacoes = [];
+     
+        return Inertia::render('reports/TableReport', [
+            'priceCeasa' =>  $cotacoes,
+
+        ]);
+        
     }
 }

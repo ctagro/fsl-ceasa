@@ -1,28 +1,26 @@
 import React from "react";
-//import Layout from '@/Layouts/DashboardLayout'
-import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
+import Layout from '@/Layouts/DashboardLayout'
 
 
 
-import { LineChart,
-    Line, 
+import {
+    BarChart,
+    Bar,
     XAxis,
     YAxis,
     CartesianGrid,
     Tooltip,
     Legend,
-    ResponsiveContainer } 
-    from 'recharts';
+} from "recharts";
 
-export const Data = ({priceCeasa, auth}) => {
-    
+const Data = ({ priceCeasa }) => {
 
     return (
-    
-        <AuthenticatedLayout auth={auth}>
+      
+        <>      
         <div className="flex lg:flex-row md:flex-col flex-col justify-between">
   
-            <LineChart
+        <BarChart
                 width={1000}
                 height={500}
                 data={priceCeasa}
@@ -38,12 +36,14 @@ export const Data = ({priceCeasa, auth}) => {
                 <YAxis />
                 <Tooltip />
                 <Legend />
-                <Line type="monotone" dataKey="price_min" fill="#ffbf00" />
-                <Line type="monotone" dataKey="price_max" fill="#a52a2a" />
-            </LineChart>
+                <Bar dataKey="price_min" fill="#ffbf00" />
+                <Bar dataKey="price_max" fill="#a52a2a" />
+            </BarChart>
             </div>
-        </AuthenticatedLayout>
+        </>
     );
 }
+
+Data.layout = page => <Layout children={page} title="Welcome" />
 
 export default Data;

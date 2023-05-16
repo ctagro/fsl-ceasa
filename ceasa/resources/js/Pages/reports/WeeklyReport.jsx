@@ -1,4 +1,8 @@
 import React from "react";
+import DashboardLayout from "@/Layouts/DashboardLayout";
+import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
+import { Head } from '@inertiajs/react'
+
 import {
     BarChart,
     Bar,
@@ -10,7 +14,7 @@ import {
 } from "recharts";
 import CardDetails from "./CardDetails";
 
-const data = [
+const Data = [
     {
         name: "Semana A",
         abacaxi: 23,
@@ -55,15 +59,17 @@ const data = [
     },
 ];
 
-export default function WeeklyReport() {
+export const xpto = ({auth})  => {
     return (
-        <>
+        
+        <AuthenticatedLayout auth={auth}>
+        <Head title = 'Posts'/>
         <div className="flex lg:flex-row md:flex-col flex-col justify-between">
        <CardDetails/>
             <BarChart
                 width={500}
                 height={300}
-                data={data}
+                data={Data}
                 margin={{
                     top: 5,
                     right: 30,
@@ -80,6 +86,8 @@ export default function WeeklyReport() {
                 <Bar dataKey="abacaxi" fill="#a52a2a" />
             </BarChart>
             </div>
-        </>
+            </AuthenticatedLayout>
+        
     );
 }
+export default xpto;

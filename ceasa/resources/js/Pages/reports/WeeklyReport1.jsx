@@ -1,4 +1,4 @@
-import React from "react";
+
 import {
     BarChart,
     Bar,
@@ -9,7 +9,23 @@ import {
     Legend,
 } from "recharts";
 
-const data = ({ priceCeasa }) => {
+import React, {useEffect, useState} from 'react'
+import axios from 'axios'
+
+const endpoint = 'http://127.0.0.1:8000/barChart'
+
+const ShowCotacoes = () => {
+    const [ Cotacoes, setCotacoes ] = useState( [] )
+    useEffect ( ()=> {
+        getAllCotacoes()
+    }, [])
+ 
+const getAllCotacoes = async () => {
+
+    const response = await axios.get(`${endpoint}/Cotacoes`)
+    setCotacoes(response.data)
+}
+
  
     return (
       
@@ -20,7 +36,7 @@ const data = ({ priceCeasa }) => {
             <BarChart
                 width={1000}
                 height={500}
-                data={priceCeasa}
+                data={Cotacoes}
                 margin={{
                     top: 10,
                     right: 30,
@@ -41,4 +57,4 @@ const data = ({ priceCeasa }) => {
     );
 }
 
-export default data;
+export default ShowCotacoes;
