@@ -14,16 +14,16 @@ import axios from 'axios'
 
 const endpoint = 'http://127.0.0.1:8000/barChart'
 
-const ShowProducts = () => {
-    const [ products, setProducts ] = useState( [] )
+const ShowCotacoes = () => {
+    const [ Cotacoes, setCotacoes ] = useState( [] )
     useEffect ( ()=> {
-        getAllProducts()
+        getAllCotacoes()
     }, [])
  
-const getAllProducts = async () => {
+const getAllCotacoes = async () => {
 
-    const response = await axios.get(`${endpoint}/products`)
-    setProducts(response.data)
+    const response = await axios.get(`${endpoint}/Cotacoes`)
+    setCotacoes(response.data)
 }
 
  
@@ -36,7 +36,7 @@ const getAllProducts = async () => {
             <BarChart
                 width={1000}
                 height={500}
-                data={products}
+                data={Cotacoes}
                 margin={{
                     top: 10,
                     right: 30,
@@ -57,4 +57,4 @@ const getAllProducts = async () => {
     );
 }
 
-export default ShowProducts;
+export default ShowCotacoes;

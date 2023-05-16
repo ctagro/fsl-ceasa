@@ -33,8 +33,10 @@ Route::get('/blog', function () {
 
 
 Route::get('ceasa', [Price_ceasaController::class, 'consult'])->name('ceasa.consult');
-Route::post('ceasa', [Price_ceasaController::class, 'research'])->name('ceasa.research');
-//Route::get('barChart', [Price_ceasaController::class, 'barChart'])->name('barChart');
+Route::get('tableReport', [Price_ceasaController::class, 'tableReport'])->name('tableReport');
+Route::post('research', [Price_ceasaController::class, 'research'])->name('ceasa.research');
+Route::get('lineChart', [Price_ceasaController::class, 'lineChart'])->name('lineChart');
+Route::get('barChart', [Price_ceasaController::class, 'barChart'])->name('barChart');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

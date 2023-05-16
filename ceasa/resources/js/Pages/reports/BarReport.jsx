@@ -4,25 +4,24 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 
 
 
-import { LineChart,
-    Line, 
+import {
+    BarChart,
+    Bar,
     XAxis,
     YAxis,
     CartesianGrid,
     Tooltip,
     Legend,
-    ResponsiveContainer } 
-    from 'recharts';
+} from "recharts";
 
 export const Data = ({priceCeasa, auth}) => {
-    
 
     return (
-    
-        <AuthenticatedLayout auth={auth}>
+      
+        <AuthenticatedLayout auth={auth}>  
         <div className="flex lg:flex-row md:flex-col flex-col justify-between">
   
-            <LineChart
+        <BarChart
                 width={1000}
                 height={500}
                 data={priceCeasa}
@@ -38,12 +37,14 @@ export const Data = ({priceCeasa, auth}) => {
                 <YAxis />
                 <Tooltip />
                 <Legend />
-                <Line type="monotone" dataKey="price_min" fill="#ffbf00" />
-                <Line type="monotone" dataKey="price_max" fill="#a52a2a" />
-            </LineChart>
+                <Bar dataKey="price_min" fill="#ffbf00" />
+                <Bar dataKey="price_max" fill="#a52a2a" />
+            </BarChart>
             </div>
-        </AuthenticatedLayout>
+        </AuthenticatedLayout> 
     );
 }
+
+//Data.layout = page => <Layout children={page} title="Welcome" />
 
 export default Data;

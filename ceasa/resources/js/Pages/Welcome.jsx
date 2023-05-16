@@ -43,8 +43,9 @@ function Welcome(props, { children }) {
                                             Produtos
                                         </Link>
                                         <Link
-                                            href="ceasa"
+                                          //  href="tableReport"
                                             method="get"
+                                            href={route('tableReport')} //active={route().current('posts.index')}
 
                                             className="font-semibold text-black hover:text-gray-900 dark:text-black dark:hover:text-gray-400 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
                                         >

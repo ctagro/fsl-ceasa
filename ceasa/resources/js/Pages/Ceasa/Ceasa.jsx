@@ -10,9 +10,11 @@ import LandingPageLayout from "@/Layouts/LandingPageLayout";
 import Welcome from "@/Components/Nav";
 import GuestLayout from "../../Layouts/GuestLayout";
 import LandingPage from "@/Layouts/LandingPage";
-import ShowProducts from "../reports/WeeklyReport1";
+
+
 
 export default function Consult() {
+  
   const [values, setValues] = useState({
     date_inicial: "",
     date_final: "",
@@ -37,6 +39,7 @@ export default function Consult() {
   return (
 
    <LandingPage>
+
   <form onSubmit={handleSubmit}>
     <div>
       <div className=" flex flex-col lg:flex-col items-center lg:px-4 m-auto max-w-[343px] h-screen lg:max-w-[1240px] md:max-w-[820px] ">
@@ -100,8 +103,11 @@ export default function Consult() {
         </div>   
       </div>
     </div>
-</form>
    
+</form>
+
+
+
     </LandingPage> 
   );
 }

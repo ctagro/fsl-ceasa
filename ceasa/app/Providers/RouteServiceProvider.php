@@ -26,6 +26,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+      //  dd("Aqui sim");
+        
         $this->configureRateLimiting();
 
         $this->routes(function () {
